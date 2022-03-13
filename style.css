@@ -1,0 +1,101 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    font-family: consolas;
+    box-sizing: border-box;
+}
+body {
+
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    min-height: 100vh;
+    background-color: #181818;
+}
+
+span{
+
+    color: #00bcd4;
+    text-transform: uppercase;
+    font-size: 2em;
+    letter-spacing: 2px;
+    margin-top:20px ;
+    margin-bottom: 23px;
+    filter: drop-shadow(0 0 20px #00bcd4) drop-shadow(0 0 60px #00bcd4);
+    animation: animate-text 0.5s steps(1) infinite;
+}
+@keyframes animate-text{
+    0%,100%
+    {
+       opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+}
+.scan {
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.scan .fingerprint {
+
+    position: relative;
+    width: 300px;
+    height: 309px;
+    background: url('fingerprint1.jpg');
+    background-repeat: no-repeat;
+    background-size: 300px;
+    
+}
+.scan .fingerprint::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 309px;
+    background: url('fingerprint2.jpg');
+    background-size: 300px;
+    
+    animation: animate 5s ease-in-out infinite;
+    
+}
+@keyframes animate{
+    0%,100%
+    {
+        height: 0%;
+    }
+    50%{
+        height: 100%;
+    }
+}
+
+.scan .fingerprint::after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background:#00bcd4 ;
+    border-radius: 8px;
+    filter: drop-shadow(0 0 20px #00bcd4) drop-shadow(0 0 60px #00bcd4);
+    
+    animation: animate_line 5s ease-in-out infinite;
+    
+}
+@keyframes animate_line{
+    0%,100%
+    {
+        top: 0%;
+    }
+    50%{
+        top: 100%;
+    }
+}
